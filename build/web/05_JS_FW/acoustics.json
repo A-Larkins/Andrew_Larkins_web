@@ -1,0 +1,18 @@
+[
+    {
+        "Name": "Martin Dreadnought",
+        "Image": "pics/pic1.png",
+        "Price": "2499"
+    },
+    {
+        "Name": "Taylor Grand Auditorium",
+        "Image": "pics/pic2.png",
+        "Price": "3199"
+    },
+    {
+        "Name": "Yamaha Dreadnought",
+        "Image": "pics/pic3.png",
+        "Price": "160"
+    }
+]
+

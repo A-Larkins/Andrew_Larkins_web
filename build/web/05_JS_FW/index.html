@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!--
+Andrew Larkins
+-->
+<html>
+    <head>
+        <title>Sortable Tables</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <style>
+            .container{
+                float: left;
+                margin: 5px;
+            }
+            #firstTable{
+                background-color: lightgreen;
+
+            }
+            #secondTable{
+                background-color: lightseagreen;
+            }
+        </style>
+        
+    </head>
+    
+    <body>
+
+        <div id="firstTable" class="container"></div>
+        <div id="secondTable" class="container"></div>
+
+        <script src="ajax.js"></script>
+        <script src="js/MakeTable.js"></script>
+        
+        <script>
+            "use strict";
+            var first = MakeTable({
+                id: "firstTable",
+                jsonFile: "acoustics.json"
+            });
+            var second = MakeTable({
+                id: "secondTable",
+                jsonFile: "electrics.json"
+            });
+        </script>
+        
+    </body>
+</html>

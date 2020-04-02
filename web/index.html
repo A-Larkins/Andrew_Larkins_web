@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+
+<!--
+Andrew Larkins
+Main webpage
+-->
+
+<html>
+    <head>
+
+        <!-- Use this type of comment within HTML -->
+        <title>Guitar Collection</title>
+
+        <link href="style/indexStyle.css" rel="stylesheet" type="text/css" />  
+        <link href="style/darkTitleStyle.css" rel="stylesheet" type="text/css" />  
+
+    </head>
+    <body>
+
+        <div id="titleNav">
+
+            <div id="pageTitle">
+                Guitar Collection
+            </div>
+
+            <div id="nav">
+
+                <div class="dropdown">
+                    <a href="#/home"><img title="Home" src="icons/new_icons/home.png" alt="Home"></a>
+                </div>
+
+
+                <!--        <div class="dropdown">
+                            <img class="dropHeader" title="Search" onclick="myDropdown.toggle(this)" 
+                                            src="icons/dark/search_dd_icon_H24.png" alt="Search" >
+                            <div class="dropContent" id="searchDropDown">
+                <!-- The next two links have been placed in the routing table. 
+                     You would put the code into users.js and other.js. -->
+
+                <!--    <a href="#/users">User List</a> <br/>
+                    <a href="#/other">[Other] List</a> <br/>
+                </div>
+            </div>
+                -->
+
+
+                <div class="dropdown">
+                    <img class="dropHeader" title="Tutorial"  onclick="myDropdown.toggle(this)" 
+                         src="icons/new_icons/tutorial.png" alt="Account" >
+                    <div class="dropContent">
+                        <a target="_blank" href='tutorial/proposal.pdf'>1: Tutorial Proposal</a> <br/>
+                        <a target="_blank" href='tutorial/poc.html'>2: Proof Of Concept</a> <br/>    
+                        <a target="_blank" href='tutorial/demo.html'>3: Component Demo</a><br/>
+                        <a target="_blank" href='tutorial/how.html'>4: How I Did It</a>
+                        <a target="_blank" href='ZipProject.zip'>Download Project</a>
+                    </div> 
+                </div> 
+
+                <div class="dropdown">
+                    <img class="dropHeader" title="Homework" onclick="myDropdown.toggle(this)" 
+                         src="icons/new_icons/homework.png" alt="Home">
+                    <div class="dropContent" id="searchDropDown">
+                        <a target="_blank" href="03_JS_Intro/index.html">JS Intro</a> <br/>
+                        <a target="_blank" href="04_JS_Adv/index.html">JS Advanced</a> <br/>
+                        <a target="_blank" href="05_JS_FW/index.html">JS Framework Style</a> <br/> 
+                        <a href="ALarkins_DB.pdf">Database Set Up</a> <br/>
+                        <a target="_blank" href="08_webAPIs/webAPIs/listUsersAPI.jsp">Web API - User List</a> <br/>
+                        <a target="_blank" href="08_webAPIs/webAPIs/listOtherAPI.jsp">Web API - Guitar List</a> <br/>
+                        <a target="_blank" href="08_webAPIs/listUsers.html">Web API - User List Table</a> <br/>
+                        <a target="_blank" href="08_webAPIs/listOther.html">Web API - Guitar List Table</a> <br/>
+                        <a target="_blank" href="09_SPA_Intro/index.html">SPA Intro</a> <br/>
+                        <a target="_blank" href="10_SPA_Adv/index.html">SPA Advanced</a>
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <a href="#/blog"><img  title="Blog" src="icons/new_icons/blog.png" alt="Homework"></a>
+                </div>
+
+            </div> <!-- end of nav -->
+
+        </div>  <!-- end of titleNav-->
+
+
+
+
+        <div id="content">
+            <img id="contentPic" src="pics/ibanez.png">
+
+            <br><br><br>
+
+            <h1 style="text-align: center;"><font size="6"><b>
+                    Ibanez RGA series RGAR42MFMT Electric Guitar Flat Blue Lagoon Burst</b></font></h1>
+
+
+            <p>
+                <font size="5"><b>Specifications </b></font>
+            <p><h3>Body</h3> <p> Body shape: Double cutaway <br> Body type: Solid body <br> 
+                Body material: Laminatead
+                <br> Top wood: Flamed Maple <br> Body wood: Mahogany <br> Body finish: Gloss 
+                <br> Orientation: Right handed
+            <p><h3> Neck</h3> <p> Neck shape: Wizard III <br> Neck wood: Maple <br> 
+                Joint: Bolt-on <br> Scale length: 25.5 in.
+                <br> Truss rod: Standard <br> Neck finish: Gloss
+            <p><h3> Fretboard</h3> <p> Material: Maple <br> Radius: 15.75 in. <br> 
+                Fret size: Jumbo <br> Number of frets: 24
+                <br> Inlays: Dot <br> Nut width: 1.69 in. (43 mm)
+            <p> <h3>Pickups </h3><p> Configuration: HH <br> Neck: Quantum (H) <br> 
+                Middle: Not applicable <br> Bridge: Quantum (H)
+                <br> Brand: Ibanez <br> Active or passive pickups: Passive <br> 
+                Series or parallel: Switchable, neck humbucker in parallel position 2
+                <br> Piezo: no <br> Active EQ: No <br> Special electronics: None
+            <p> <h3>Controls</h3> <p> Control layout: Master volume, tone <br>
+                Pickup switch: 5- way <br> Coil tap or split: Yes, position 4
+            <br> Kill switch: no <p> <h3>Hardware </h3><p> Bridge type: Tremelo/Vibrato 
+                <br> Bride design: 6-saddle double locking
+                <br> Tailpiece: Not applicable <br> Tuning machines: Die-cast <br> 
+                Color: Black
+            <p> <h3>Other</h3> <p> Number of strings: 6-string <br> Special features: Top wood 
+                <br> Country of origin: Indonesia<br>
+                <a href="https://www.ibanez.com/usa/">Click Here To See More Ibanez Guitars</a>
+                <br><br><br>
+            </p>
+
+
+        </div> <!-- content. -->
+
+        <div id="footer">
+            [ Andrew Larkins ]
+        </div>
+
+        <script src="js/dropdownFw.js"></script>
+        <script src="js/routeFw.js"></script>
+
+        <script src="js/components/blog.js"></script>
+        <script src="js/components/home.js"></script>
+
+        <script>
+
+                        "use strict";
+                        var myRoutes = [];
+
+                        myRoutes['/'] = home;  // home is a function stored in js/components/home.js
+                        myRoutes['/home'] = home;
+                        myRoutes['/blog'] = blog;
+
+
+                        // routeFw returns a routing object that has private and public 
+                        // data members and methods. 
+                        // As input parameter, it takes an object with properties you can set 
+                        // or just accept whatever defaults are set by the framework.
+                        var myRoutes = routeFw({
+                            routeArray: myRoutes,
+                            //startingPath: '/home',
+                            contentId: "content"
+                        });
+
+                        // print the routes (check console.log)
+                        myRoutes.printRoutes();
+
+                        var myDropdown = dropDownFw({
+                            dropContentStyle: "dropContent",
+                            hiddenRight: "-500px"
+                        });
+
+        </script>
+
+    </body>
+</html>

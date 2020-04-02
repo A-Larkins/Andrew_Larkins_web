@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+
+<html>
+    <head>
+        <title>Cool Guitars</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="style/03_style.css" rel="stylesheet" type="text/css" />
+    </head>
+
+    <body>
+
+        <h1 style="text-align: center;">Check Out These Cool Guitars!</h1>
+        <h2 style = "text-align: center;">Click on guitar to increase price by 10%.</h2>
+
+
+        <div id="schecter"></div>
+
+            <button onclick="changeName1()">Change Name</button>
+            <input id="newName"/> 
+            <button onclick="changePrice1()">Change price</button>
+            <input id="newPrice1"/> 
+            <br/>   
+
+
+            <h2 style = "text-align: center;">Click on guitar to increment coolness.</h2>
+            <div id="tosin"></div>
+
+            <button onclick="changeName2()">Change Name</button>
+            <input id="newName2"/> 
+            <button onclick="changePrice2()">Change price</button>
+            <input id="newPrice2"/> 
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+
+            <script src="js/MakeGuitar.js"></script>
+            <script>
+                "use strict";
+                var guitar1 = MakeGuitar("schecter", "Hellraiser", 10, 899, "black", "pics/hellraiser.png");
+                guitar1.log();
+
+                var guitar2 = MakeGuitar("tosin", "TAM100", 9, 3599, "black", "pics/tosin.png");
+                guitar2.log();
+
+                guitar1.onclick = function () {
+                    console.log("increase price by 10%");
+                    guitar1.changePriceOnClick();
+                };
+
+
+                guitar2.onclick = function () {
+                    console.log("increase coolness by 1");
+                    guitar2.incrementCoolness();
+                    if (guitar2.coolness > 10) {
+                        guitar2.changeCoolness(10);
+                        alert("Rate 0-10");
+                    }
+                };
+
+                function changeName1() {
+                    var newName = document.getElementById("newName").value;
+                    guitar1.setName(newName);
+                }
+
+                function changeName2() {
+                    var newName2 = document.getElementById("newName2").value;
+                    guitar2.setName(newName2);
+                }
+
+                function changePrice1() {
+                    var newPrice1 = document.getElementById("newPrice1").value;
+                    guitar1.setPrice(newPrice1);
+                }
+               
+
+                function changePrice2() {
+                    var newPrice2 = document.getElementById("newPrice2").value;
+                    guitar2.setPrice(newPrice2);
+                }
+
+
+                console.log("guitar1: public property level is " + guitar1.coolness);
+                console.log("guitar2: private property price is " + guitar2.price);
+
+              </script>
+
+    </body>
+    
+</html>

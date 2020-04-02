@@ -1,0 +1,22 @@
+body { 
+    background-color: lightgray; /* this is grey that shows through the content area */
+    color: blue;  /* color of font */
+}
+
+#titleNav { 
+    background-color: black;
+    color: lime;
+}
+
+#nav a {  
+    color: lime; /* light gray: to provide color for links, you have to style the "a" tag */
+}
+
+#footer { 
+    background-color:black;
+    color: lime; 
+}
+
+.dropContent {
+    background-color:black;
+}

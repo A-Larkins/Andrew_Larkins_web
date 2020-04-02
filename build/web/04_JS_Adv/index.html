@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!--
+Index for 04_JS_Adv
+Andrew Larkins
+-->
+<html>
+    <head>
+        <title>Guitar Slide Show</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link href="style/04_style.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        
+        <div id="wrapBody">
+        
+        <h1>Rock and Roll!</h1>
+
+        <p class="container" id="fenderSlideShowId"></p>
+
+        <p class="container" id="ibanezSlideShowId"></p>
+
+        <p class="container" id="schecterSlideShowId"></p>
+        </div>
+        
+        
+        <script src="js/MakeSlideShow.js"></script>
+
+        <script>
+            "use strict";
+
+            var picFolder = "pics/";
+
+            var picObj1 = {src: "fender1.jpg", caption: "Fender Semi-Hollow Telecaster"};
+            var picObj2 = {src: "fender2.jpg", caption: "Jim Root Signature Telecaster"};
+            var picObj3 = {src: "fender3.jpg", caption: "Fender Emerald Telecaster"};
+            var picObjList = [picObj1, picObj2, picObj3];
+            var ss1 = MakeSlideShow("fenderSlideShowId", picFolder, picObjList);
+
+            var picObj4 = {src: "ibanez1.jpg", caption: "Tosin Abasi 8-string"};
+            var picObj5 = {src: "ibanez2.jpg", caption: "RG series"};
+            var picObj6 = {src: "ibanez3.jpg", caption: "AZ series"};
+            var picObjList = [picObj4, picObj5, picObj6];
+            var ss2 = MakeSlideShow("ibanezSlideShowId", picFolder, picObjList);
+
+            var picObj7 = {src: "schecter1.jpg", caption: "Schecter guitars"};
+            var picObj8 = {src: "schecter2.jpg", caption: "More guitars"};
+            var picObj9 = {src: "schecter3.jpg", caption: "Mooooooore Yes!"};
+            var picObjList = [picObj7, picObj8, picObj9];
+            var ss3 = MakeSlideShow("schecterSlideShowId", picFolder, picObjList);
+
+            fenderSlideShowId.setPic(0);
+            ibanezSlideShowId.setPic(2);
+            ibanezSlideShowId.auto(750);
+            schecterSlideShowId.auto(1500);
+
+        </script>
+
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

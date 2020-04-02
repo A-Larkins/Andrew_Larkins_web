@@ -1,0 +1,35 @@
+
+/* 
+    Created on : Mar 20, 2020, 9:14:31 PM
+    Author     : al93
+*/
+
+body {
+    font-family: sans-serif;
+}
+
+table {
+    margin:auto;    
+    margin-top: 1em; 
+}
+
+td {
+    padding: 4px;
+    background-color: #DDEEEE;
+    font-size:13px;
+}
+
+th {  
+    padding:4px;
+    padding-top:8px;
+    background-color: #AABBCC;
+    font-weight: bold;
+    font-size:16px;
+}
+
+td img {
+    width: 100px;
+    height: 100px;
+}
+
+

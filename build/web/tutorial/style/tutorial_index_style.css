@@ -1,0 +1,35 @@
+
+#book1 {
+    font-size: 40px;
+    text-align: left;
+    padding: 10px 
+}
+
+#book1After {
+    font-size: 40px;
+    text-align: left;
+    padding: 10px;
+}
+
+#book2 {
+    font-size: 40px;
+    text-align: left;
+    padding: 10px;
+}
+
+#book2After {
+    font-size: 40px;
+    text-align: left;
+    padding: 10px;
+}
+
+.btnClass {
+    font-size: 60px;
+    height: 200px;
+    width: 200px;
+}
+
+#howDiv {
+    padding: 100px;
+    font-size: 24px;
+}

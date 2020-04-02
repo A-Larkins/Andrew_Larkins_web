@@ -1,0 +1,50 @@
+/*
+Stylesheet for 04_JS_Adv
+Andrew Larkins
+*/
+
+
+
+body {
+    
+    padding: 0px;
+    margin: 0px;
+    background-color: midnightblue;
+}
+
+#wrapBody {
+    background-color: graytext;
+    margin: auto;
+    width: 97%;
+    overflow: hidden;
+    padding: 15px;
+}
+
+h1 {
+    text-align: center;
+    color: lime;
+}
+
+.container {
+    margin: 100px;
+    float: left;
+    text-align: center;
+}
+
+.container img {
+    width: 409px;
+    height: 380px;
+    border-radius: 8px;
+    box-shadow: 5px 5px 5px black;
+    align-content: center;
+}
+
+.container p
+{
+    font-family: sans-serif;
+    font-weight: bold;
+    align-content: center;
+    color: lime
+}
+
+

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>List Of Guitar Objects</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="style/clickSort.css" rel="stylesheet" type="text/css" />  
+
+    </head>
+    <body>
+
+        <h3 style="text-align:center">Click Column Headings To Sort</h3>
+
+        <div id="listHere"></div>
+
+        <script src="js/ajax.js"></script>
+        <script src="js/MakeTable.js"></script>
+        <script>
+            "use strict";
+
+            function my$(element) {
+                return document.getElementById(element);
+            }
+
+            ajax("webAPIs/listOtherAPI.jsp", success, "listHere");
+
+            function success(httpRequest) {
+                var obj = JSON.parse(httpRequest.responseText);
+                if (obj.dbError.length > 0) {
+                    // the API call might have been successful, but maybe there was a DB error 
+                    // (like forgot to tunnel in, or SQL syntax error, etc).
+                    my$("listHere").innerHTML = "Error: " + dbError;
+                } else {
+                    // combine, rename, and reorder the fields from obj.webUserList into a new list of objects, 
+                    // as you wish.
+                    var list = [];
+                    for (var i = 0; i < obj.guitarTableList.length; i++) {
+                        list[i] = {}; // create empty object
+
+                        list[i].guitar_id = obj.guitarTableList[i].guitar_id;
+                        list[i].guitar_make = obj.guitarTableList[i].guitar_make;
+                        list[i].guitar_model = obj.guitarTableList[i].guitar_model;
+                        list[i].guitar_image = "<img src='" + obj.guitarTableList[i].guitar_image + "'/>";
+                        list[i].guitar_price = obj.guitarTableList[i].guitar_price;
+                        list[i].guitar_manufacture_date = obj.guitarTableList[i].guitar_manufacture_date;
+
+                    }
+
+                    // turn the list into an HTML table 
+                    MakeTable("listHere", list, "guitar_make");
+                }
+            }
+
+        </script>
+    </body>
+</html>
