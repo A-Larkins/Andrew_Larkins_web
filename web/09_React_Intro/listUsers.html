@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>User: React</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="style/clickSort.css" rel="stylesheet" type="text/css" />  
+        
+        <!-- React CDNs -->
+        <script crossorigin src='https://unpkg.com/react@16/umd/react.development.js' crossorigin></script>
+        <script crossorigin src='https://unpkg.com/react-dom@16/umd/react-dom.development.js' crossorigin></script>
+
+        <!-- Babel CDN --> 
+        <script crossorigin src='https://unpkg.com/babel-standalone@6/babel.min.js' crossorigin></script>
+      
+    </head>
+    
+    <body>
+
+        <h3 style="text-align:center">User List</h3>
+
+        <div id="listHere"></div>
+
+        <script src="js/ajax_alt.js"></script>
+        <script type="text/babel" src="js/React/UserTable.js"></script>
+            
+            
+         <script type="text/babel">
+            "use strict";
+
+            function my$(element) {
+                return document.getElementById(element);
+            }
+
+            ajax_alt("webAPIs/listUsersAPI.jsp", success, "listHere");
+
+            function success(obj) {
+                console.log(obj);
+                if (obj.dbError.length > 0) {
+                    // the API call might have been successful, but maybe there was a DB error 
+                    // (like forgot to tunnel in, or SQL syntax error, etc).
+                    my$("listHere").innerHTML = "Error: " + obj.dbError;
+                } else {
+                    // combine, rename, and reorder the fields from obj.webUserList into a new list of objects, as you wish.
+                    var newList = [];
+                    for (var i = 0; i < obj.webUserList.length; i++) {
+                        newList[i] = {}; // create empty object 
+                        newList[i].webUserId = obj.webUserList[i].webUserId;
+                        newList[i].userEmail = obj.webUserList[i].userEmail;
+                        newList[i].image = obj.webUserList[i].image;
+                        newList[i].birthday = obj.webUserList[i].birthday;
+                        newList[i].membershipFee = obj.webUserList[i].membershipFee;
+                        newList[i].errorMsg = obj.webUserList[i].errorMsg; 
+                    }
+                    
+                    // turn the list into an react table 
+                    ReactDOM.render(
+                            <UserTable list={newList}/>,
+                            document.getElementById("listHere")
+                            );
+                }
+            }
+
+        </script>
+    </body>
+</html>

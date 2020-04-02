@@ -1,105 +1,148 @@
 // Andrew Larkins
 
+// Main make component function.
+
 function MakeLengthConversion(params) {
 
-    // get book div and result div
-    var showBook = document.getElementById(params.id);
-    var bookAfter = document.getElementById(params.idAfter);
+    // Divs passed in.
+    // book div is for the title and audio playback length at x1 speed.
+    // book after div is manipulated according to which button is clicked on.
+    var divBook = document.getElementById(params.id);
+    var divBookAfter = document.getElementById(params.idAfter);
 
     // obj properties passed in
     var title = params.title;
-    var hours = params.lengthOfHours;
-    var minutes = params.lengthOfMinutes;
-    var speed = params.speed;
+    var hours = params.hours;
+    var minutes = params.minutes;
+    var speed = 1;
 
     console.log("title is " + title);
     console.log("hours are " + hours);
     console.log("minutes are " + minutes);
-    console.log("current speed is " + speed);
+    console.log("speed is " + speed);
 
-    // display the default attributes
-    showBook.innerHTML = ("Audiobook Title: " + title + ", Audio Time: Hours: " + hours + " \n\
+    // Display the title and current length at x1 speed.
+    divBook.innerHTML = ("Audiobook Title: " + title + ", Audio Time: Hours: " + hours + " \n\
                         Minutes: " + minutes);
 
-    // store the total mins of the audiobook... force it be a float
-    var totalMins = hours * 60 + parseFloat(minutes);
-    console.log("length total mins: " + totalMins);
+    // Create 4 buttons
+    var btn_x1_25 = document.createElement("button");
+    btn_x1_25.innerHTML = "x1.25";
+    var btn_x1_50 = document.createElement("button");
+    btn_x1_50.innerHTML = "x1.50";
+    var btn_x1_75 = document.createElement("button");
+    btn_x1_75.innerHTML = "x1.75";
+    var btn_x2 = document.createElement("button");
+    btn_x2.innerHTML = "x2";
 
-    // If the object has the attributes of speed passed in as 1.25
-    // then do the math and display the new playback time
-    // and the time saved in minutes.
-    if (speed === 1.25) {
-        var total_mins_at_1_25 = totalMins / 1.25;
-        console.log("length total mins at 1.25 speed = " + total_mins_at_1_25);
-        var speed_1_25_total_inHours = (total_mins_at_1_25 / 60);
-        console.log("1.25 speed total in hours = " + speed_1_25_total_inHours);
-        var decimalPlaceOfHours = speed_1_25_total_inHours - Math.floor(speed_1_25_total_inHours);
-        console.log("the decimal place of the total in hours = " + decimalPlaceOfHours);
-        var speed_1_25_hours = Math.floor(total_mins_at_1_25 / 60);
-        console.log("the hours to display = " + speed_1_25_hours);
-        var speed_1_25_mins = Math.round(decimalPlaceOfHours * 60);
-        console.log("the mins to display = " + speed_1_25_mins);
-        var timeSavedAt_1_25 = Math.round(totalMins - total_mins_at_1_25);
-        console.log("the minutes saved at 1.25 speed = " + timeSavedAt_1_25);
+    // Style the buttons
+    setStyle();
 
-        bookAfter.innerHTML = "Audiobook new playback time: Hours: "
-                + speed_1_25_hours + " Minutes: " + speed_1_25_mins
-                + "<br>Wow you can save: " + timeSavedAt_1_25 + " minutes!";
+    function setStyle() {
+        divBook.style.textAlign = "center";
+        divBookAfter.style.textAlign = "center";
+
+        btn_x1_25.style.margin = "auto";
+        btn_x1_50.style.margin = "auto";
+        btn_x1_75.style.margin = "auto";
+        btn_x2.style.margin = "auto";
+
+        btn_x1_25.style.fontSize = "60px";
+        btn_x1_25.style.display = "bar";
+        btn_x1_25.style.width = "25%";
+        btn_x1_25.style.background = "#e7e7e7";
+
+        btn_x1_50.style.fontSize = "60px";
+        btn_x1_50.style.display = "bar";
+        btn_x1_50.style.width = "25%";
+        btn_x1_50.style.background = "#e7e7e7";
+
+        btn_x1_75.style.fontSize = "60px";
+        btn_x1_75.style.display = "bar";
+        btn_x1_75.style.width = "25%";
+        btn_x1_75.style.background = "#e7e7e7";
+
+        btn_x2.style.fontSize = "60px";
+        btn_x2.style.display = "bar";
+        btn_x2.style.width = "25%";
+        btn_x2.style.background = "#e7e7e7";
     }
 
-    if (speed === 1.50) {
-        var total_mins_at_1_50 = totalMins / 1.50;
-        console.log("length total mins at 1.50 speed = " + total_mins_at_1_50);
-        var speed_1_50_total_inHours = (total_mins_at_1_50 / 60);
-        console.log("1.50 speed total in hours = " + speed_1_50_total_inHours);
-        var decimalPlaceOfHours = speed_1_50_total_inHours - Math.floor(speed_1_50_total_inHours);
-        console.log("the decimal place of the total in hours = " + decimalPlaceOfHours);
-        var speed_1_50_hours = Math.floor(total_mins_at_1_50 / 60);
-        console.log("the hours to display = " + speed_1_50_hours);
-        var speed_1_50_mins = Math.round(decimalPlaceOfHours * 60);
-        console.log("the mins to display = " + speed_1_50_mins);
-        var timeSavedAt_1_50 = Math.round(totalMins - total_mins_at_1_50);
-        console.log("the minutes saved at 1.50 speed = " + timeSavedAt_1_50);
-
-        bookAfter.innerHTML = "Audiobook new playback time: Hours: "
-                + speed_1_50_hours + " Minutes: " + speed_1_50_mins
-                + "<br>Wow you can save: " + timeSavedAt_1_50 + " minutes!";
+    // Place the buttons after the current div if next spot avaliable.
+    if (divBook.nextSibling) {
+        divBook.parentNode.insertBefore(btn_x2, divBook.nextSibling);
     }
-    if (speed === 1.75) {
-        var total_mins_at_1_75 = totalMins / 1.75;
-        console.log("length total mins at 1.75 speed = " + total_mins_at_1_75);
-        var speed_1_75_total_inHours = (total_mins_at_1_75 / 60);
-        console.log("1.75 speed total in hours = " + speed_1_75_total_inHours);
-        var decimalPlaceOfHours = speed_1_75_total_inHours - Math.floor(speed_1_75_total_inHours);
-        console.log("the decimal place of the total in hours = " + decimalPlaceOfHours);
-        var speed_1_75_hours = Math.floor(total_mins_at_1_75 / 60);
-        console.log("the hours to display = " + speed_1_75_hours);
-        var speed_1_75_mins = Math.round(decimalPlaceOfHours * 60);
-        console.log("the mins to display = " + speed_1_75_mins);
-        var timeSavedAt_1_75 = Math.round(totalMins - total_mins_at_1_75);
-        console.log("the minutes saved at 1.75 speed = " + timeSavedAt_1_75);
-
-        bookAfter.innerHTML = "Audiobook new playback time: Hours: "
-                + speed_1_75_hours + " Minutes: " + speed_1_75_mins
-                + "<br>Wow you can save: " + timeSavedAt_1_75 + " minutes!";
+    if (divBook.nextSibling) {
+        divBook.parentNode.insertBefore(btn_x1_75, divBook.nextSibling);
     }
-    if (speed === 2) {
-        var total_mins_at_2 = totalMins / 2;
-        console.log("length total mins at 2 speed = " + total_mins_at_2);
-        var speed_2_total_inHours = (total_mins_at_2 / 60);
-        console.log("x2 speed total in hours = " + speed_2_total_inHours);
-        var decimalPlaceOfHours = speed_2_total_inHours - Math.floor(speed_2_total_inHours);
-        console.log("the decimal place of the total in hours = " + decimalPlaceOfHours);
-        var speed_2_hours = Math.floor(total_mins_at_2 / 60);
-        console.log("the hours to display = " + speed_2_hours);
-        var speed_2_mins = Math.round(decimalPlaceOfHours * 60);
-        console.log("the mins to display = " + speed_2_mins);
-        var timeSavedAt_2 = Math.round(totalMins - total_mins_at_2);
-        console.log("the minutes saved at 2 speed = " + timeSavedAt_2);
+    if (divBook.nextSibling) {
+        divBook.parentNode.insertBefore(btn_x1_50, divBook.nextSibling);
+    }
+    if (divBook.nextSibling) {
+        divBook.parentNode.insertBefore(btn_x1_25, divBook.nextSibling);
+    }
 
-        bookAfter.innerHTML = "Audiobook new playback time: Hours: "
-                + speed_2_hours + " Minutes: " + speed_2_mins
-                + "<br>Wow you can save: " + timeSavedAt_2 + " minutes!";
+    // Wire the click event handler method
+    // to call the proper functions that change
+    // the speed of the object.
+    btn_x1_25.addEventListener("click", function () {
+        console.log("Button x1.25 has been clicked on.");
+        resetBtnStyle();
+        highlightClickedBtn(btn_x1_25);
+        changeSpeed(1.25, hours, minutes);
+    });
+    btn_x1_50.addEventListener("click", function () {
+        console.log("Button x1.50 has been clicked on.");
+        resetBtnStyle();
+        highlightClickedBtn(btn_x1_50);
+        changeSpeed(1.50, hours, minutes);
+    });
+    btn_x1_75.addEventListener("click", function () {
+        console.log("Button x1.75 has been clicked on.");
+        resetBtnStyle();
+        highlightClickedBtn(btn_x1_75);
+        changeSpeed(1.75, hours, minutes);
+    });
+    btn_x2.addEventListener("click", function () {
+        console.log("Button x2 has been clicked on.");
+        resetBtnStyle();
+        highlightClickedBtn(btn_x2);
+        changeSpeed(2, hours, minutes);
+    });
+
+    function resetBtnStyle() {
+        btn_x1_25.style.background = "#e7e7e7";
+        btn_x1_50.style.background = "#e7e7e7";
+        btn_x1_75.style.background = "#e7e7e7";
+        btn_x2.style.background = "#e7e7e7";
+
+    }
+
+    function highlightClickedBtn(btn) {
+        btn.style.background = "red";
+    }
+
+    function changeSpeed(speed, hours, minutes) {
+        // store the total mins of the audiobook... force it be a float
+        var totalMins = hours * 60 + parseFloat(minutes);
+        var newTotalMins = totalMins / speed;
+        var newTotalHours = (newTotalMins / 60);
+        var decimalOfHours = newTotalHours - Math.floor(newTotalHours);
+        var hoursAtNewSpeed = Math.floor(newTotalMins / 60);
+        var minsAtNewSpeed = Math.round(decimalOfHours * 60);
+        var timeSaved = Math.round(totalMins - newTotalMins);
+
+        console.log("total minutes = " + totalMins);
+        console.log("total minutes at x" + speed + " = " + newTotalMins);
+        console.log("total hours at x" + speed + " = " + newTotalHours);
+        console.log("decimal of hours at x" + speed + " = " + decimalOfHours);
+        console.log("hours at speed x" + speed + " = " + hoursAtNewSpeed);
+        console.log("mins at speed x" + speed + " = " + minsAtNewSpeed);
+        console.log("time saved at speed x" + speed + " = " + timeSaved);
+
+        divBookAfter.innerHTML = "Audiobook new playback time: Hours: "
+                + hoursAtNewSpeed + " Minutes: " + minsAtNewSpeed
+                + "<br>Wow you can save: " + timeSaved + " minutes!";
     }
 
 }

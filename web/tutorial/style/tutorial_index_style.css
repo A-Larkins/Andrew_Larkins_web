@@ -1,35 +1,73 @@
 
 #book1 {
-    font-size: 40px;
-    text-align: left;
-    padding: 10px 
+    font-size: 60px;
+    text-align: center;
+    padding: 10px;
 }
 
 #book1After {
-    font-size: 40px;
-    text-align: left;
+    font-size: 60px;
+    text-align: center;
     padding: 10px;
 }
 
 #book2 {
-    font-size: 40px;
-    text-align: left;
+    font-size: 60px;
+    text-align: center;
     padding: 10px;
 }
 
 #book2After {
-    font-size: 40px;
-    text-align: left;
+    font-size: 60px;
+    text-align: center;
     padding: 10px;
 }
 
-.btnClass {
-    font-size: 60px;
-    height: 200px;
-    width: 200px;
+#howDiv {
+    width: 90%;
+    text-align: center;
+    font-family: Arial;
+    margin: auto;
+    font-size: 28px;
+    background: rgb(133, 235, 131);
+    color: rgb(140, 0, 133);
 }
 
-#howDiv {
-    padding: 100px;
-    font-size: 24px;
+#head {
+  text-align: center;
+  font-size: 90px;
+  font-weight: bold;
+
+}
+
+#pic1{
+  float: left;
+}
+#pic2 {
+  float: right;
+}
+#pic3 {
+  float: left;
+}
+#pic4 {
+  float: left;
+}
+#pic5 {
+  float: right;
+}#pic6 {
+  float: left;
+}#pic7 {
+  float: right;
+}
+
+
+
+
+.pics {
+  width: 40%
+}
+
+#wrapper {
+
+  background: rgb(0, 5, 143);
 }

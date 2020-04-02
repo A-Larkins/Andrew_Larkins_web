@@ -2,51 +2,104 @@
 <html>
     <head>
         <title>ReadMe</title>
-
-        <link href="style/tutorial_index_style.css" rel="stylesheet" type="text/css" />  
-
+        <link href="style/tutorial_index_style.css" rel="stylesheet" type="text/css" />
     </head>
     <body>
+        <div id="wrapper">
+            <div id="howDiv"><br/>
+                <h1 id="head">README</h1>
+                <p>
+                    The component that I made was inspired by the desire to see the
+                    time remaining when listening to a sped up audiobook. Most audio
+                    software does not adjust the time remaining in the audiobook.
+                    I set out to make the nice quick calculations to see what the total
+                    time of an audiobook would be sped up. I thought it'd be a neat
+                    little program. I then thought to add a feature to show how much
+                    time you could save if you sped up the audiobook by a certain amount.
+                    Because I needed to add another javascript effect, I thought it'd be
+                    cool that when the user clicks on a button, then it will light
+                    up red.<br/><br/>
+                    To make what I had in mind, I figured I would need buttons with speed
+                    increase options, similar to how you would speed up the audio in
+                    an app like audible. The options that fit best were to speed up
+                    the audio by x1.25, x.1.5, x1.75, and x2. The math was a bit tricky
+                    because I needed to keep track of the proper rounding in the
+                    program. An example is that I would want to round down for the
+                    total hours and round up for minutes, and some other similar situations.<br/>
 
-        <div id="howDiv">
-            Welcome to the read me page of the audio playback length component.
-            <br/><br/><br/><br/>
-            <p>
-                The component that I made was inspired by the desire to see the
-                time remaining when listening to a sped up audiobook. Most audio
-                software does not adjust the time remaining in the audiobook.
-                I set out to make the nice quick calculations to see what the total
-                time of an audiobook would be sped up. I thought it'd be a neat
-                little program. I then thought to add a feature to show how much
-                time you could save if you sped up the audiobook by a certain amount.
-                So these became the 2 features of my component.
+                <p>
+                <h3>How To Use</h3>
+                </p>
 
-                <br/><br/><br/><br/>
+                <p>
+                    <img class="pics" id="pic1" src="pics/demo4.png">
 
-                To make what I had in mind, I figured I would need buttons with
-                the amount increased, like you would to speed up the audio in
-                an app like audible. The options that fit best were to speed up
-                the audio by x1.25, x.1.5, x1.75, and x2. The math was a bit tricky
-                because I needed to keep track of proper rounding. This is because
-                I would want to round down for the total hours and round up for
-                minutes, and some other similar situations.
+                    <br/><br/>
+                    All you have to do is click on the new speed you want.
+                    The top shows the previous hours and minutes of the audio
+                    length. The converted time will be displayed after the buttons.
+                    The current clicked button will light up red so you know which
+                    speed is currently selected. If you want to click on another
+                    button, then the new data will be shown and the other button
+                    will light up red.
+                </p>
 
-                <br/><br/><br/><br/>
+                <p>
+                    <br/><br/><br/>
+                <h3>Code Snippets<h3>
+                        <img class="pics" id="pic2" src="pics/htmlCode.png">
+                        <br/><br/><br/>
+                        To the right is the html page that the javascript
+                        is inserted into. The divs are for the title and
+                        default times.
 
-                Using the component is pretty simple. You just have to click
-                on which button you'd like to check out. The default hours
-                and minutes are then shown at the bottom to be changed.
-                You can then click on other buttons no problem, as the
-                new audiobook playback time will change accordingly.
+                        <br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                        <br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                        <img class="pics" id="pic4" src="pics/makeFunc1.png">
+                        This is the make component function for the page.
 
-                <br/><br/><br/><br/>
-                To check out more, click on the tutorial icon!
+                        <br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                        <img class="pics" id="pic3" src="pics/createButtons.png">
+                        <br/><br/><br/><br/><br/><br/><br/><br/><br/>
+
+                        Then I inserted the title and original audiobook length.
+                        The buttons are created and inserted after the title.
+                        They are styled to default colors so that the clicked one
+                        can change colors.
 
 
-            </p>
+                        Then I inserted the title and original audiobook length.
+                        The buttons are created and inserted after the title.
+                        They are styled to default colors so that the clicked one
+                        can change colors.
+                        <br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                        <img class="pics" id="pic5" src="pics/placeButtons.png">
+                        The buttons are then placed.
+                        <br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                        <img class="pics" id="pic6" src="pics/clickEvent.png">
+                        The buttons are wired for the click event. This
+                        calls the change speed method.
+                        <br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                        <br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                        <img class="pics" id="pic7" src="pics/changeSpeed.png">
+                        To the right is the change speed function. This is the main
+                        math computations that are done to get the new length with
+                        the current speed.<br/><br/><br/><br/><br/><br/><br/><br/>
+
+                        </p>
+
+                        To check out more, click on the tutorial icon!<br/><br/>
 
 
-        </div>    
 
-    </body>
-</html>
+
+
+
+                        </p>
+
+
+                        </div>
+
+                        </div>
+                        </body>
+                        </html>

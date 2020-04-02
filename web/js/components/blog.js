@@ -150,47 +150,23 @@ var content = `
     <p>
         In this homework I learned how to invoke server side Web APIs
         (using AJAX) and display the results nicely on a web page. 
-        [Say more about what you learned ...] 
-        The parts that I found easy were ... 
-        The parts that I found hard or confusing were ... 
+        In order to get data from the database tables, I needed to tunnel into
+        the Temple server. This is because of the server side java code.
+        I was able to pull up to the minute data from the tables.
+        This all was similar to the last homework, but instead I got to
+        check out an intro to react. React is useful for single page applications.
+        The parts that I found easy were the understanding of the reusability
+        of the last homework. I still used all the java code that I used last week,
+        just this time envoking them with React.
+        The parts that I found hard or confusing were still the java server side
+        stuff now is still daunting. I do understand what I'm doing with interacting
+        with the database, but I'm not exactly sure yet of the methods used to do so.
+        It is something I expect to continue to learn in my next courses at Temple.
     </p>
     <ul>
         <li>
             To see my user and [other] data displayed within my "home grown" 
-            Single Page Application, click on the 
-            links under the search icon in the navigation bar. 
-        </li>
-    </ul>
-    
-    <h2>HW 10 SPA Intro</h2>
-    <p>
-        In this homework I learned how to use a Single Page Application Framework.
-        [Talk about what you learned...] 
-    </p>
-    <p>
-        
-        The parts that I found easy were ... 
-        The parts that I found hard or confusing were ... 
-    </p>
-    <ul>
-        <li>
-            To run my homework, click 
-            <a target="_blank" href="09_SPA_Intro/index.html">here</a> or 
-            click on the "SPA Intro" link under the homework icon.
-        </li>
-    </ul>
-    
-    <h2>HW 11 SPA Advanced</h2>
-    <p>
-        In this homework I learned ... 
-        The parts that I found easy were ... 
-        The parts that I found hard or confusing were ... 
-    </p>
-    <ul>
-        <li>
-            To run my homework, click 
-            <a target="_blank" href="10_SPA_Adv/index.html">here</a> or 
-            click on the "SPA Advanced" link under the homework icon.
+            Single Page Application, click on any of the icons in the navbar! 
         </li>
     </ul>
     

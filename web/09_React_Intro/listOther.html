@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>List Of Guitar Objects</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="style/clickSort.css" rel="stylesheet" type="text/css" />  
+
+        <!-- React CDNs -->
+        <script crossorigin src='https://unpkg.com/react@16/umd/react.development.js' crossorigin></script>
+        <script crossorigin src='https://unpkg.com/react-dom@16/umd/react-dom.development.js' crossorigin></script>
+
+        <!-- Babel CDN --> 
+        <script crossorigin src='https://unpkg.com/babel-standalone@6/babel.min.js' crossorigin></script>
+
+    </head>
+    <body>
+
+        <h3 style="text-align:center">Guitar Table</h3>
+
+        <div id="listHere"></div>
+
+        <script src="js/ajax_alt.js"></script>
+        <script type="text/babel" src="js/React/GuitarTable.js"></script>
+
+        <script type="text/babel">
+            "use strict";
+
+            function my$(element) {
+                return document.getElementById(element);
+            }
+
+            ajax_alt("webAPIs/listOtherAPI.jsp", success, "listHere");
+
+            function success(obj) {
+                console.log(obj);
+                if (obj.dbError.length > 0) {
+                    // the API call might have been successful, but maybe there was a DB error 
+                    // (like forgot to tunnel in, or SQL syntax error, etc).
+                    my$("listHere").innerHTML = "Error: " + obj.dbError;
+                } else {
+                    // combine, rename, and reorder the fields from obj.webUserList into a new list of objects, as you wish.
+                    var newList = [];
+                    for (var i = 0; i < obj.guitarTableList.length; i++) {
+                        newList[i] = {}; // create empty object
+
+                        newList[i].guitar_id = obj.guitarTableList[i].guitar_id;
+                        newList[i].guitar_make = obj.guitarTableList[i].guitar_make;
+                        newList[i].guitar_model = obj.guitarTableList[i].guitar_model;
+                        newList[i].guitar_image = obj.guitarTableList[i].guitar_image;
+                        newList[i].guitar_price = obj.guitarTableList[i].guitar_price;
+                        newList[i].guitar_manufacture_date = obj.guitarTableList[i].guitar_manufacture_date;
+
+                    }
+
+                    // turn the list into an HTML table 
+                    ReactDOM.render(
+                            <GuitarTable list={newList}/>,
+                            document.getElementById("listHere")
+                            );
+                }
+            }
+
+        </script>
+    </body>
+</html>

@@ -4,7 +4,7 @@ Andrew Larkins
 -->
 <html>
     <head>
-        <title>Time Saver</title>
+        <title>Tutorial Demo</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="style/tutorial_index_style.css" rel="stylesheet" type="text/css" />
@@ -12,129 +12,33 @@ Andrew Larkins
 
     <body>
         <br/>
-        <div id="book1"> test </div>
-        <button id= "btn1" class="btnClass" onclick="setSpeed_1_25()">x1.25</button>
-        <button id= "btn2" class="btnClass" onclick="setSpeed_1_50()">x1.5</button>
-        <button id= "btn3" class="btnClass" onclick="setSpeed_1_75()">x1.75</button>
-        <button id= "btn4" class="btnClass" onclick="setSpeed_2()">x2</button>
-        <div id = "book1After"> Audiobook new playback time: </div>
+        <div id="book1"></div>
+        <div id = "book1After">Click a button to speed up!</div>
 
         <br/><br/><br/>
-        <div id="book2"> test </div>
-        <button id= "btn5" class="btnClass" onclick="setSpeed_1_25_2()">x1.25</button>
-        <button id= "btn6" class="btnClass" onclick="setSpeed_1_50_2()">x1.5</button>
-        <button id= "btn7" class="btnClass" onclick="setSpeed_1_75_2()">x1.75</button>
-        <button id= "btn8" class="btnClass" onclick="setSpeed_2_2()">x2</button>
-        <div id = "book2After"> Audiobook new playback time: </div>
+        <div id="book2"></div>
+        <div id = "book2After">Click a button to speed up!</div>
 
         <script src="js/MakeLengthConversion.js"></script>
 
         <script>
-            // Default object to inject in book1 div and book1After div.
-            // Speed at 1x
-            var objDefault = MakeLengthConversion({
+
+            var obj = MakeLengthConversion({
                 id: "book1",
                 idAfter: "book1After",
                 title: "A Storm Of Swords",
-                lengthOfHours: "47",
-                lengthOfMinutes: "34",
-                speed: 1
+                hours: "47",
+                minutes: "34"
             });
-            // book1 div and book1After div get changed here
-            // after the button x1.25 is clicked.
-            // the playback speed is now x1.25
-            function setSpeed_1_25() {
-                var obj1 = MakeLengthConversion({
-                    id: "book1",
-                    idAfter: "book1After",
-                    title: "A Storm Of Swords",
-                    lengthOfHours: "47",
-                    lengthOfMinutes: "34",
-                    speed: 1.25
-                });
-            }
-            function setSpeed_1_50() {
-                var obj1 = MakeLengthConversion({
-                    id: "book1",
-                    idAfter: "book1After",
-                    title: "A Storm Of Swords",
-                    lengthOfHours: "47",
-                    lengthOfMinutes: "34",
-                    speed: 1.50
-                });
-            }
-            function setSpeed_1_75() {
-                var obj1 = MakeLengthConversion({
-                    id: "book1",
-                    idAfter: "book1After",
-                    title: "A Storm Of Swords",
-                    lengthOfHours: "47",
-                    lengthOfMinutes: "34",
-                    speed: 1.75
-                });
-            }
-            function setSpeed_2() {
-                var obj1 = MakeLengthConversion({
-                    id: "book1",
-                    idAfter: "book1After",
-                    title: "A Storm Of Swords",
-                    lengthOfHours: "47",
-                    lengthOfMinutes: "34",
-                    speed: 2
-                });
-            }
 
-            // Default object to inject in book2 div and book2After div.
-            // Speed at 1x
             var obj2 = MakeLengthConversion({
                 id: "book2",
                 idAfter: "book2After",
                 title: "The Martian",
-                lengthOfHours: "10",
-                lengthOfMinutes: "59",
-                speed: 1
+                hours: "10",
+                minutes: "59"
             });
-            function setSpeed_1_25_2() {
-                var obj2 = MakeLengthConversion({
-                    id: "book2",
-                    idAfter: "book2After",
-                    title: "The Martian",
-                    lengthOfHours: "10",
-                    lengthOfMinutes: "59",
-                    speed: 1.25
-                });
-            }
-            function setSpeed_1_50_2() {
-                var obj2 = MakeLengthConversion({
-                    id: "book2",
-                    idAfter: "book2After",
-                    title: "The Martian",
-                    lengthOfHours: "10",
-                    lengthOfMinutes: "59",
-                    speed: 1.50
-                });
-            }
-            function setSpeed_1_75_2() {
-                var obj2 = MakeLengthConversion({
-                    id: "book2",
-                    idAfter: "book2After",
-                    title: "The Martian",
-                    lengthOfHours: "10",
-                    lengthOfMinutes: "59",
-                    speed: 1.75
-                });
-            }
-            function setSpeed_2_2() {
-                var obj2 = MakeLengthConversion({
-                    id: "book2",
-                    idAfter: "book2After",
-                    title: "The Martian",
-                    lengthOfHours: "10",
-                    lengthOfMinutes: "59",
-                    speed: 2
-                });
-            }
-            
+
         </script>
     </body>
 </html>
